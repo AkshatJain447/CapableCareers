@@ -69,7 +69,7 @@ const Navbar = () => {
           >
             About Us
           </li>
-          <Link to={"/employerdash"}>
+          <Link to={"/employerdash/dashboard"}>
             <li className=" hover:text-primaryText duration-300 cursor-pointer">
               Employer
             </li>

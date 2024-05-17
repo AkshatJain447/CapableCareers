@@ -1,8 +1,9 @@
 import { onAuthStateChanged } from "firebase/auth";
-import { auth, database } from "../../firebase/firebaseConfig";
+import { auth, database } from "../firebase/firebaseConfig";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import Loader from "../loader/Loader";
+import Loader from "../components/loader/Loader";
+import { Link, Outlet } from "react-router-dom";
 
 const UserDashboard = ({ userInfo }) => {
   var [greet, setGreet] = useState("Good Morning");
@@ -30,7 +31,23 @@ const UserDashboard = ({ userInfo }) => {
           <p className=" text-2xl font-semibold">{`${userInfo.name}'s dashboard`}</p>
         </div>
       </div>
-      <div className="border shadow-lg"></div>
+      <div className="border shadow-xl flex m-5 p-3 rounded-lg w-[80%]">
+        <ul className="border-r-[1px] p-4 border-gray-900 mr-4 w-32">
+          <li>
+            <Link to={"/employerdash/dashboard"}>Dashboard</Link>
+          </li>
+          <li>
+            <Link to={"personalInfo"}>Personal Info</Link>
+          </li>
+          <li>
+            <Link to={"jobPosted"}>Jobs Posted</Link>
+          </li>
+          <li>
+            <Link to={"postNew"}>Post New</Link>
+          </li>
+        </ul>
+        <Outlet />
+      </div>
     </div>
   );
 };

@@ -9,7 +9,11 @@ import Home from "./components/Home/Home.jsx";
 import Jobs from "./components/Jobs/Jobs.jsx";
 import Training from "./components/Trainings/Training.jsx";
 import Events from "./components/Events/Events.jsx";
-import Employer from "./components/Employer/Employer.jsx";
+import Employer from "./routes/Employer.jsx";
+import Dashboard from "./components/dashboard/Dashboard.jsx";
+import PersonalInfo from "./components/dashboard/PersonalInfo.jsx";
+import JobPosted from "./components/dashboard/JobPosted.jsx";
+import PostNew from "./components/dashboard/PostNew.jsx";
 
 const router = createBrowserRouter([
   {
@@ -30,8 +34,26 @@ const router = createBrowserRouter([
         element: <Events />,
       },
       {
-        path: "/employerdash",
+        path: "/employerdash/dashboard",
         element: <Employer />,
+        children: [
+          {
+            path: "",
+            element: <Dashboard />,
+          },
+          {
+            path: "personalInfo",
+            element: <PersonalInfo />,
+          },
+          {
+            path: "jobPosted",
+            element: <JobPosted />,
+          },
+          {
+            path: "postNew",
+            element: <PostNew />,
+          },
+        ],
       },
     ],
   },

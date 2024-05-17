@@ -68,7 +68,7 @@ const Register = () => {
         setDoc(
           doc(usersRef, userInfo.user.email),
           {
-            userId: userInfo.user.uid,
+            userId: userInfo.user.uniqueUserId,
             name: userInfo.user.displayName,
             email: userInfo.user.email,
             profilePic: userInfo.user.photoURL,
