@@ -46,7 +46,7 @@ const Dashboard = () => {
     }, {});
 
     return (
-      <div>
+      <div className="lg:w-4/5">
         <h1 className="font-semibold text-lg underline">User Information: </h1>
         <p className="mt-2">
           <span className="font-semibold">Username:</span> {userInfo.name}

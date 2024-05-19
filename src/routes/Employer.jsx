@@ -7,6 +7,8 @@ import { Link, Outlet } from "react-router-dom";
 
 const UserDashboard = ({ userInfo }) => {
   var [greet, setGreet] = useState("Good Morning");
+  var [activeTab, setActiveTab] = useState("dashboard");
+
   useEffect(() => {
     const time = new Date();
     if (time.getHours() < 12) {
@@ -20,30 +22,68 @@ const UserDashboard = ({ userInfo }) => {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="flex justify-center gap-12 items-center m-4 p-8 px-20 border shadow-xl w-fit rounded-xl">
+      <div className="flex justify-center gap-2 md:gap-12 items-center m-4 p-2 md:p-8 md:px-20 border shadow-xl w-fit rounded-xl">
         <img
-          className=" h-40 w-40 rounded-full"
+          className="h-12 w-12 md:h-24 md:w-24 lg:h-40 lg:w-40 rounded-full"
           src={`${userInfo.profilePic}`}
           alt="profilePic"
         />
         <div>
-          <p className=" text-3xl font-semibold">{`${greet}, ${userInfo.name}`}</p>
-          <p className=" text-2xl font-semibold">{`${userInfo.name}'s dashboard`}</p>
+          <p className=" md:text-2xl lg:text-3xl font-semibold">{`${greet}, ${userInfo.name}`}</p>
+          <p className=" lg:text-2xl font-semibold">{`${userInfo.name}'s dashboard`}</p>
         </div>
       </div>
-      <div className="border shadow-xl flex m-5 p-3 rounded-lg w-[80%]">
-        <ul className="border-r-[1px] p-4 border-gray-900 mr-4 w-32">
-          <li>
-            <Link to={"/employerdash/dashboard"}>Dashboard</Link>
+      <div className="border shadow-xl lg:flex m-5 p-3 rounded-lg w-[80%]">
+        <ul className="lg:border-r-[1px] p-4 lg:text-lg text-center border-gray-900 mr-4  lg:w-1/5">
+          <li
+            className={`${
+              activeTab === "dashboard"
+                ? "bg-orange-400 text-white font-semibold"
+                : ""
+            } mb-2 border p-1 rounded-md shadow-md`}
+          >
+            <Link
+              to={"/employerdash/dashboard"}
+              onClick={() => setActiveTab("dashboard")}
+            >
+              Dashboard
+            </Link>
           </li>
-          <li>
-            <Link to={"personalInfo"}>Personal Info</Link>
+          <li
+            className={` ${
+              activeTab === "personalInfo"
+                ? "bg-orange-400 text-white font-semibold"
+                : ""
+            } mb-2 border p-1 rounded-md shadow-md`}
+          >
+            <Link
+              to={"personalInfo"}
+              onClick={() => setActiveTab("personalInfo")}
+            >
+              Personal Info
+            </Link>
           </li>
-          <li>
-            <Link to={"jobPosted"}>Jobs Posted</Link>
+          <li
+            className={`${
+              activeTab === "jobsPosted"
+                ? "bg-orange-400 text-white font-semibold"
+                : ""
+            } mb-2 border p-1 rounded-md shadow-md `}
+          >
+            <Link to={"jobPosted"} onClick={() => setActiveTab("jobsPosted")}>
+              Jobs Posted
+            </Link>
           </li>
-          <li>
-            <Link to={"postNew"}>Post New</Link>
+          <li
+            className={`${
+              activeTab === "postNew"
+                ? "bg-orange-400 text-white font-semibold"
+                : ""
+            } mb-2 border p-1 rounded-md shadow-md`}
+          >
+            <Link to={"postNew"} onClick={() => setActiveTab("postNew")}>
+              Post New
+            </Link>
           </li>
         </ul>
         <Outlet />
