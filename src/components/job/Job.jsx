@@ -40,7 +40,7 @@ const Job = ({ job }) => {
     if (loggedIn) {
       setApplyModal(true);
     } else {
-      alert("user not signed in");
+      alert("user not signed in as seeker");
     }
   };
   return (
