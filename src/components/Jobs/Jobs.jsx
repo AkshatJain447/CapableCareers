@@ -1,13 +1,16 @@
-import { collection, onSnapshot } from "firebase/firestore";
+import { collection, onSnapshot, query, where } from "firebase/firestore";
 import { database } from "../../firebase/firebaseConfig";
 import { useEffect, useState } from "react";
 import Job from "../job/Job";
 
 const Jobs = () => {
-  const collectionRef = collection(database, "JobList");
   const [jobsList, setJobsList] = useState([]);
   useEffect(() => {
-    onSnapshot(collectionRef, (snapshot) => {
+    const q = query(
+      collection(database, "JobList"),
+      where("Vacancies", ">", 0)
+    );
+    onSnapshot(q, (snapshot) => {
       const jobsArr = [];
       snapshot.forEach((doc) => {
         jobsArr.push(doc.data());

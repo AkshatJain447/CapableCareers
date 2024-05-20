@@ -85,7 +85,7 @@ const Dashboard = () => {
                 <span className="font-semibold">Company/Organization: </span>
                 {lastJobPosted.Company}
               </li>
-              <li className="my-2">
+              <li className="my-2 text-justify">
                 <span className="font-semibold">Job Description: </span>
                 {lastJobPosted.Description}
               </li>

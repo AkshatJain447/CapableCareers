@@ -43,7 +43,7 @@ const UserDashboard = ({ userInfo }) => {
             } mb-2 border p-1 rounded-md shadow-md`}
           >
             <Link
-              to={"/employerdash/dashboard"}
+              to={"/jobSeeker/dashboard"}
               onClick={() => setActiveTab("dashboard")}
             >
               Dashboard
@@ -63,28 +63,6 @@ const UserDashboard = ({ userInfo }) => {
               Personal Info
             </Link>
           </li>
-          <li
-            className={`${
-              activeTab === "jobsPosted"
-                ? "bg-orange-400 text-white font-semibold"
-                : ""
-            } mb-2 border p-1 rounded-md shadow-md `}
-          >
-            <Link to={"jobPosted"} onClick={() => setActiveTab("jobsPosted")}>
-              Jobs Posted
-            </Link>
-          </li>
-          <li
-            className={`${
-              activeTab === "postNew"
-                ? "bg-orange-400 text-white font-semibold"
-                : ""
-            } mb-2 border p-1 rounded-md shadow-md`}
-          >
-            <Link to={"postNew"} onClick={() => setActiveTab("postNew")}>
-              Post New
-            </Link>
-          </li>
         </ul>
         <Outlet />
       </div>
@@ -95,13 +73,13 @@ const UserDashboard = ({ userInfo }) => {
 const SigninMsg = () => {
   return (
     <div className=" my-12 lg:my-24 font-semibold text-2xl lg:text-3xl text-center grid place-content-center">
-      User is either Signed out or not an employer, please SignIn accordingly to
-      proceed
+      User is either Signed out or not a job seeker, please SignIn accordingly
+      to proceed
     </div>
   );
 };
 
-const Employer = () => {
+const JobSeeker = () => {
   var [userInfo, setUserInfo] = useState(null);
   const [loading, setLoading] = useState(true);
   const [loggedIn, setLoggedIn] = useState(false);
@@ -119,7 +97,7 @@ const Employer = () => {
           querySnapshot.forEach((doc) => {
             var userVerify = doc.data();
             setUserInfo(userVerify);
-            if (userVerify.role === "Employer") {
+            if (userVerify.role === "JobSeeker") {
               setLoggedIn(true);
             }
             setLoading(false);
@@ -152,5 +130,4 @@ const Employer = () => {
     </>
   );
 };
-
-export default Employer;
+export default JobSeeker;

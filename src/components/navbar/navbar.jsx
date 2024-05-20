@@ -48,6 +48,7 @@ const Navbar = () => {
         <button
           className="lg:hidden cursor-pointer border border-transparent duration-200 hover:border-gray-300 p-2 rounded-md"
           onClick={handleNavBtn}
+          onMouseLeave={() => dispatch(closeNavBar(false))}
         >
           <TiThMenu className="text-2xl" />
         </button>
@@ -72,6 +73,11 @@ const Navbar = () => {
           <Link to={"/employerdash/dashboard"}>
             <li className=" hover:text-primaryText duration-300 cursor-pointer">
               Employer
+            </li>
+          </Link>
+          <Link to={"/jobSeeker/dashboard"}>
+            <li className=" hover:text-primaryText duration-300 cursor-pointer">
+              Job Seeker
             </li>
           </Link>
           <Link to={"/jobs"}>

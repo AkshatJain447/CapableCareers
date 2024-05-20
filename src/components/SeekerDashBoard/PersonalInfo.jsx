@@ -4,7 +4,7 @@ import { auth, database } from "../../firebase/firebaseConfig";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import Loader from "../loader/Loader";
 
-const PersonalInfo = () => {
+const SeekerPersonalInfo = () => {
   const [userInfo, setUserInfo] = useState(null);
 
   useEffect(() => {
@@ -64,4 +64,4 @@ const PersonalInfo = () => {
   return <>{userInfo ? <DisplayDashboard /> : <Loader />}</>;
 };
 
-export default PersonalInfo;
+export default SeekerPersonalInfo;

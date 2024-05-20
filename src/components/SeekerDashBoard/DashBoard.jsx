@@ -1,13 +1,13 @@
 import { onAuthStateChanged } from "firebase/auth";
+import { useEffect, useState } from "react";
 import { auth, database } from "../../firebase/firebaseConfig";
 import { collection, getDocs, query, where } from "firebase/firestore";
-import { useEffect, useState } from "react";
+import Loader from "../loader/Loader";
 import ApplyJob from "../ApplyJob/ApplyJob";
 
-const Job = ({ job }) => {
-  const [applyModal, setApplyModal] = useState(false);
-  const [user, setUser] = useState(null);
-  const [loggedIn, setLoggedIn] = useState(false);
+const DashBoard = () => {
+  const [userInfo, setUserInfo] = useState(null);
+  var [jobList, setJobList] = useState([]);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
@@ -16,36 +16,40 @@ const Job = ({ job }) => {
           collection(database, "users"),
           where("email", "==", user.email)
         );
+        const jobQ = query(
+          collection(database, "JobList"),
+          where("Vacancies", ">", 0)
+        );
 
         try {
           const querySnapshot = await getDocs(q);
           querySnapshot.forEach((doc) => {
-            if (doc.data().role === "JobSeeker") {
-              setUser(doc.data());
-              setLoggedIn(true);
-            }
+            setUserInfo(doc.data());
           });
+          const jobsSnapshot = await getDocs(jobQ);
+          var temp = [];
+          jobsSnapshot.forEach((doc) => {
+            temp.push(doc.data());
+          });
+          setJobList(temp);
         } catch (error) {
           console.error("Error getting documents: ", error);
         }
-      } else {
-        setLoggedIn(false);
       }
     });
 
     return unsubscribe;
   }, [auth, database]);
 
-  const handleApplyBtn = () => {
-    if (loggedIn) {
+  const DisplayJob = ({ job }) => {
+    const [applyModal, setApplyModal] = useState(false);
+
+    const handleApplyBtn = () => {
       setApplyModal(true);
-    } else {
-      alert("user not signed in");
-    }
-  };
-  return (
-    <>
-      <div className="border border-gray-300 hover:shadow-lg duration-200 hover:border-gray-500 rounded-md p-1 m-2 mb-3">
+    };
+
+    return (
+      <div className="border border-gray-300 hover:shadow-lg duration-200 hover:border-gray-500 rounded-md p-1 mx-auto mb-3">
         <h5 className="text-xl font-semibold tracking-wide text-left bg-primaryDark text-white w-fit py-1 px-3 rounded-md m-3 shadow">
           Job Position: {job.jobTitle}
         </h5>
@@ -58,7 +62,7 @@ const Job = ({ job }) => {
               <span className="font-semibold">Company/Organization: </span>
               {job.Company}
             </li>
-            <li className="my-2">
+            <li className="my-2 text-justify">
               <span className="font-semibold">Job Description: </span>
               {job.Description}
             </li>
@@ -93,13 +97,48 @@ const Job = ({ job }) => {
         {applyModal && (
           <ApplyJob
             job={job}
-            userInfo={user}
+            userInfo={userInfo}
             toggle={() => setApplyModal(!applyModal)}
           />
         )}
       </div>
-    </>
-  );
-};
+    );
+  };
 
-export default Job;
+  const DisplayDashboard = () => {
+    return (
+      <div className="lg:w-4/5">
+        <h1 className="font-semibold text-lg underline">User Information: </h1>
+        <p className="mt-2">
+          <span className="font-semibold">Username:</span> {userInfo.name}
+        </p>
+        <p className="mt-2">
+          <span className="font-semibold">Employer ID:</span> {userInfo.userId}
+        </p>
+        <p className="mt-2">
+          <span className="font-semibold">Email:</span> {userInfo.email}
+        </p>
+
+        <h1 className="mt-3 font-semibold text-lg underline">
+          Total Jobs Posted: {jobList.length}
+        </h1>
+        <span className="mr-10">
+          <span className="font-semibold">Active Jobs:</span> {jobList.length}
+        </span>
+        <span>
+          <span className="font-semibold">Inactive Jobs:</span> {0}
+        </span>
+
+        <h1 className="mt-3 font-semibold text-lg underline">Jobs Posted:</h1>
+        <div className="h-[400px] overflow-y-scroll">
+          {jobList.map((job) => (
+            <DisplayJob key={job.JobId} job={job} />
+          ))}
+        </div>
+      </div>
+    );
+  };
+
+  return <>{userInfo ? <DisplayDashboard /> : <Loader />}</>;
+};
+export default DashBoard;

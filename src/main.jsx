@@ -14,6 +14,9 @@ import Dashboard from "./components/dashboard/Dashboard.jsx";
 import PersonalInfo from "./components/dashboard/PersonalInfo.jsx";
 import JobPosted from "./components/dashboard/JobPosted.jsx";
 import PostNew from "./components/dashboard/PostNew.jsx";
+import JobSeeker from "./routes/JobSeeker.jsx";
+import DashBoard from "./components/SeekerDashBoard/DashBoard.jsx";
+import SeekerPersonalInfo from "./components/SeekerDashBoard/PersonalInfo.jsx";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +35,20 @@ const router = createBrowserRouter([
       {
         path: "/events",
         element: <Events />,
+      },
+      {
+        path: "/jobSeeker/dashboard",
+        element: <JobSeeker />,
+        children: [
+          {
+            path: "",
+            element: <DashBoard />,
+          },
+          {
+            path: "personalInfo",
+            element: <SeekerPersonalInfo />,
+          },
+        ],
       },
       {
         path: "/employerdash/dashboard",

@@ -18,7 +18,7 @@ const DisplayJob = ({ job }) => {
             <span className="font-semibold">Company/Organization: </span>
             {job.Company}
           </li>
-          <li className="my-2">
+          <li className="my-2 text-justify">
             <span className="font-semibold">Job Description: </span>
             {job.Description}
           </li>
@@ -39,11 +39,6 @@ const DisplayJob = ({ job }) => {
           <li className="my-2">
             <span className="font-semibold">Location: </span>
             {job.JobLocation}
-          </li>
-          <li className="my-2">
-            <button className="float-right border p-2 hover:scale-105 hover:border-secondary hover:text-secondary duration-200 shadow-sm hover:shadow-md font-semibold bg-gray-200 text-gray-800 hover:bg-white rounded-md cursor-pointer">
-              Apply Now
-            </button>
           </li>
         </ul>
       </div>
