@@ -46,6 +46,7 @@ const DashBoard = () => {
 
     const handleApplyBtn = () => {
       setApplyModal(true);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     };
 
     return (

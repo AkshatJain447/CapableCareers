@@ -39,6 +39,7 @@ const Job = ({ job }) => {
   const handleApplyBtn = () => {
     if (loggedIn) {
       setApplyModal(true);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
       alert("user not signed in as seeker");
     }
