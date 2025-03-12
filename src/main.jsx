@@ -4,7 +4,7 @@ import App from "./routes/App.jsx";
 import "./index.css";
 import { store } from "./store/index.js";
 import { Provider } from "react-redux";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { RouterProvider, createHashRouter } from "react-router-dom";
 import Home from "./components/Home/Home.jsx";
 import Jobs from "./components/Jobs/Jobs.jsx";
 import Training from "./components/Trainings/Training.jsx";
@@ -18,7 +18,7 @@ import JobSeeker from "./routes/JobSeeker.jsx";
 import DashBoard from "./components/SeekerDashBoard/DashBoard.jsx";
 import SeekerPersonalInfo from "./components/SeekerDashBoard/PersonalInfo.jsx";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <App />,
