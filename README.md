@@ -1,6 +1,6 @@
 # 🌟 Capable Careers – Job Portal & Training Platform for Persons with Disabilities
 
-![Capable Careers Banner](https://your-image-link-if-any.com)
+![Capable Careers Banner](https://capablecareers.netlify.app/)
 
 **Capable Careers** is a job portal and training platform designed specifically for individuals with disabilities. Our mission is to bridge the employment gap by offering accessible job listings, skills training, community support, and essential resources tailored to their unique needs.
 
@@ -52,11 +52,10 @@
 
 ## 📸 Screenshots
 
-> *Add a few screenshots of the UI here in Markdown like:*
-
-![Home Page](./assets/home.png)
-![Job Listings](./assets/jobs.png)
-![Training Module](./assets/training.png)
+![Home Page](./assets/Hero.png)
+![Home Page](./assets/Home.png)
+![Job Listings](./assets/Jobs.png)
+![User DashBoard](./assets/Dashboard.png)
 
 ---
 
