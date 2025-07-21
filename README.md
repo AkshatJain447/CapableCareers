@@ -64,11 +64,11 @@ Despite progressive mandates reserving **4–5%** of government jobs for disable
 ### 💼 Job Listings  
 ![Job Listings](./assets/Jobs.png)
 
-### 👤 Job Seeker Dashboard  
-![Job Seeker Dashboard](./assets/JobSeekerDashboard.png)
+### 👤 Job Listings  
+![Job Listings](./assets/Jobs.png)
 
-### 🏢 Employer Dashboard  
-![Employer Dashboard](./assets/EmployerDashboard.png)
+### 🏢 User DashBoard  
+![User DashBoard](./assets/Dashboard.png)
 
 ---
 
