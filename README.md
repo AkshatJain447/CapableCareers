@@ -1,105 +1,123 @@
-# 🌟 Capable Careers – Job Portal & Training Platform for Persons with Disabilities
+# 🌟 Capable Careers – Bridging Talent & Opportunity for India’s Specially-Abled
 
-**Capable Careers** is a job portal and training platform designed specifically for individuals with disabilities. Our mission is to bridge the employment gap by offering accessible job listings, skills training, community support, and essential resources tailored to their unique needs.
+**Capable Careers** is an accessible job portal and upskilling platform built for persons with disabilities in India. Conceived at SIH 2023 to combat employment barriers, the project addresses under-representation, visibility issues, and lack of resources—laying the groundwork for a more inclusive workforce.
 
-🔗 **Live Demo**: [capablecareers.netlify.app](https://capablecareers.netlify.app/)  
-🔗 **GitHub Repo**: [CapableCareers Repository](https://github.com/AkshatJain447/CapableCareers)
+🔗 **[Live Demo](https://capablecareers.netlify.app/)**  
+🔗 **[GitHub Repository](https://github.com/AkshatJain447/CapableCareers)**
 
 ---
 
-## 🚀 Key Features
+## 🚩 The Problem
 
-### 🧩 Inclusive Job Portal
-- Find curated job opportunities tailored for differently-abled individuals.
-- Filter jobs by skills, location, and preferences.
+Despite progressive mandates reserving **4–5%** of government jobs for disabled individuals, less than half of these positions are filled in India. Barriers such as inaccessible information, limited resources, and community isolation keep **hundreds of thousands** of capable job seekers from meaningful work.
 
-### ♿ Accessibility-Focused Design
-- Screen reader support
-- Keyboard navigation
-- Voice-command-ready structure (future scope)
-- Customizable UI elements
+**Capable Careers** turns technology into access and opportunity.  
+*Demo/sample data is showcased; the platform is architected to scale and impact 400,000–800,000+ specially-abled job-seekers nationwide.*
 
-### 👥 Community Support
-- Dedicated forums and chatrooms for peer support.
-- Share success stories, challenges, and career guidance.
+---
 
-### 🎯 Skill Development Modules
-- Curated training content based on job profiles.
-- Hands-on practice with certification-based learning.
+## 🚀 Feature Highlights
 
-### 📚 Resource Directory
-- Access important services such as healthcare, counseling, legal support, and education.
-- Categorized listings with contact information.
+- 🧩 **Inclusive Job Portal**
+  - Curated positions for differently-abled candidates
+  - Role-based access: job seekers apply, employers post/manage openings
+  - Personalized dashboards and application tracking
 
-### 🔔 Real-time Updates
-- Stay updated with latest job openings, news, and events.
-- Notifications for upcoming webinars, interviews, and training deadlines.
+- ♿ **Accessibility First**
+  - Screen reader and keyboard navigation support
+  - Customizable, responsive UI themes
+  - Future-ready foundation for voice commands and extended accessibility
+
+- 📚 **Skills & Learning Hub**
+  - 6+ targeted upskilling courses (YouTube linked)
+  - Fast-track learning mapped to in-demand roles
+
+- 👤 **Secure & Role-Based Access**
+  - Firebase Authentication (Google & Email/Password)
+  - Permissioned dashboard flow for job seekers and employers
+
+- 📅 **Events & Resources**
+  - Demo event listings for webinars, drives, and opportunities
+  - Expanding hub for vital services: healthcare, education, legal aid
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Frontend | Backend (Not used in this phase) | Database/Hosting |
-|----------|----------------|------------------|
-| React.js | N/A (Firebase used) | Firebase (Auth, Firestore, Hosting) |
-| Redux    | -              | -                |
-| Tailwind CSS | -          | -                |
-| JavaScript | -            | -                |
+| Technology           | Role                                          |
+|----------------------|-----------------------------------------------|
+| **React.js**         | Modern, component-driven front end            |
+| **Redux Toolkit**    | Scalable global state & user/session flows    |
+| **Firebase Auth**    | Fast, secure authentication (OAuth/Email)     |
+| **Cloud Firestore**  | Real-time NoSQL for jobs, users, contacts     |
+| **Firebase Hosting** | CI/CD, blazing-fast static hosting            |
+| **Tailwind CSS**     | Utility-first, accessible, mobile-first UI    |
+| **React Icons**      | Consistent, inclusive iconography             |
 
 ---
 
 ## 📸 Screenshots
 
-![Home Page](./assets/Hero.png)
+### 🏠 Home Page  
 ![Home Page](./assets/Home.png)
+
+### 💼 Job Listings  
 ![Job Listings](./assets/Jobs.png)
-![User DashBoard](./assets/Dashboard.png)
+
+### 👤 Job Seeker Dashboard  
+![Job Seeker Dashboard](./assets/JobSeekerDashboard.png)
+
+### 🏢 Employer Dashboard  
+![Employer Dashboard](./assets/EmployerDashboard.png)
 
 ---
 
-## 📈 Impact Potential
+## 📈 Impact & Aspirations
 
-This platform aims to assist **400,000–800,000+** disabled individuals in India by:
-- Increasing visibility into accessible government/private job opportunities
-- Enabling independent career growth through training
-- Fostering a supportive ecosystem and inclusive hiring practices
-
----
-
-## 🧠 Learnings
-
-- Built scalable component structures in React
-- Implemented global state with Redux for complex workflows
-- Designed responsive UI using Tailwind CSS
-- Integrated Firebase Auth and Firestore database for real-time updates
+- **Engineered for national scale:** Robust demo with architecture ready for 400,000–800,000+ users  
+- **Tackling under-representation:** Increases job awareness, skill development, and workforce participation for the specially-abled  
+- **Accessible by default:** Prioritizes inclusivity in every user interaction
 
 ---
 
-## 💡 Future Enhancements
+## 🧑‍💻 Learnings & Achievements
 
-- Admin dashboard for job providers
-- AI-based job matching algorithm
-- API integration for PAN/Disability verification
-- Voice assistance and multilingual support
-
----
-
-## 👥 Team
-
-**CodingKnights447**  
-Lead Developer: Akshat Jain  
-Email: [CodingKnights447@gmail.com](mailto:CodingKnights447@gmail.com)
+- Modular React component architecture for rapid iterations
+- Redux-enabled role and state management
+- Prioritized accessibility and mobile responsiveness
+- Deep Firebase integration (authentication, real-time data, hosting)
+- Achieved **4th place at Hackfusion (NIT Hamirpur)**
 
 ---
 
-## 🤝 Contributions & Feedback
+## 🔮 Roadmap & Next Steps
 
-We’d love to hear from you!  
-Raise an issue or submit a pull request if you'd like to contribute.  
-For feature requests, bugs, or ideas, feel free to open a discussion or email us.
+- 🛠️ Admin dashboard for enterprise and system management
+- 🤖 AI-powered, personalized job recommendations
+- 🔒 API integrations (govt. document/disability verification)
+- 🗣️ Voice command support & multilingual UI
+- 📲 In-app notifications and live event features
+
+---
+
+## 👨‍💻 About the Developer
+
+**Akshat Jain**  
+Computer Science graduate; passionate about accessible, scalable web solutions  
+Experienced in React, Node.js, MongoDB, Firebase, and clean UI practices  
+✉️ CodingKnights447@gmail.com
+
+---
+
+## 🤝 Contributions & Collaboration
+
+- Star/fork and submit pull requests: a11y, integration, training, and more
+- Open to partnerships, mentorship, and new feature discussions
 
 ---
 
 ## 📄 License
 
-This project is open-source under the [MIT License](LICENSE).
+MIT License — fully open for use and collaboration.
+
+> 💪 *Capable Careers unlocks human potential. If you value accessible tech and authentic problem-solving, join the journey!*
